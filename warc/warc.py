@@ -325,6 +325,8 @@ class WARCReader:
         m = None
         while not m:
             version_line = fileobj.readline()
+            if len(version_line) == 0:  # eof
+                return None
             m = self.RE_VERSION.match(version_line)
         version = m.group(1)
         if version not in self.SUPPORTED_VERSIONS:
@@ -333,6 +335,8 @@ class WARCReader:
         headers = {}
         while True:
             line = fileobj.readline()
+            if len(line) == 0:  # eof while reading header ? skip it
+                return None
             if line == "\n": # end of headers
                 if "Content-Length" in headers: # handle extra newline
                     break                       # see http://lintool.github.com/Cloud9/docs/content/clue.html#malformed
