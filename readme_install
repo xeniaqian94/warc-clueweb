@@ -1,0 +1,4 @@
+change setup.py name and package to warccw09
+mv warc/ warccw09/
+python setup.py build
+python setup.py install

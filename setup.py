@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(
-    name="warc",
+    name="warccw09",
     version="0.2.0",
     description="Python library to work with ARC and WARC files",
     long_description=open('Readme.rst').read(),
@@ -11,7 +11,7 @@ setup(
     author="Internet Archive",
     author_email="info@archive.org",
     url="http://github.com/internetarchive/warc",
-    packages=["warc"],
+    packages=["warccw09"],
     platforms=["any"],
     package_data={'': ["LICENSE", "Readme.rst"]},
     include_package_data=True,
